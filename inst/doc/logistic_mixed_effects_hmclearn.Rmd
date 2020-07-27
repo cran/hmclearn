@@ -1,7 +1,7 @@
 ---
 title: "hmclearn:  Logistic Mixed Effects Regression Example"
 author: "Samuel Thomas"
-date: "2020-06-10"
+date: "2020-07-22"
 output:
   rmarkdown::html_vignette:
     fig_caption: false
@@ -297,7 +297,7 @@ f_hmc <- hmc(N = N, theta.init = initvals,
 
 t2.hmc <- Sys.time()
 t2.hmc - t1.hmc
-#> Time difference of 11.52061 mins
+#> Time difference of 16.14619 mins
 ```
 
 The acceptance ratio for each of the HMC chains is sufficiently high for an efficient simulation.
@@ -423,8 +423,8 @@ fm1 <- glmer(use ~ age + I(age^2) + urban + liv2 + (1 | district),
 #> Warning in checkConv(attr(opt, "derivs"), opt$par, ctrl = control$checkConv, : Model is nearly unidentifiable: very large eigenvalue
 #>  - Rescale variables?
 summary(fm1)
-#> Generalized linear mixed model fit by maximum likelihood (Laplace
-#>   Approximation) [glmerMod]
+#> Generalized linear mixed model fit by maximum likelihood
+#>   (Laplace Approximation) [glmerMod]
 #>  Family: binomial  ( logit )
 #> Formula: use ~ age + I(age^2) + urban + liv2 + (1 | district)
 #>    Data: Contraception
@@ -562,3 +562,5 @@ Bates, D., M&auml;chler, M., Bolker, B., & Walker, S. (2015). Fitting linear mix
 Bates, D., M&auml;chler, M., & Bolker, B. (2014). mlmRev: Examples from multilevel modelling software review. *R package version, 1*.
 
 Agresti, A. (2015). *Foundations of linear and generalized linear models*. John Wiley & Sons.  ISBN: 978-1-118-73003-4
+
+Thomas, Samuel, and Wanzhu Tu. "Learning Hamiltonian Monte Carlo in R." arXiv preprint arXiv:2006.16194 (2020).

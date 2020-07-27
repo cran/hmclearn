@@ -12,7 +12,7 @@
 
 <meta name="author" content="Samuel Thomas" />
 
-<meta name="date" content="2020-06-10" />
+<meta name="date" content="2020-07-22" />
 
 <title>hmclearn: Linear Mixed Effects Regression Example</title>
 
@@ -303,7 +303,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">hmclearn: Linear Mixed Effects Regression Example</h1>
 <h4 class="author">Samuel Thomas</h4>
-<h4 class="date">2020-06-10</h4>
+<h4 class="date">2020-07-22</h4>
 
 
 
@@ -524,31 +524,34 @@ f(\boldsymbol\beta, \mathbf{u}, \sigma_\epsilon^2, \mathbf{G} | \mathbf{y}, \mat
 <span id="cb3-3"><a href="#cb3-3"></a><span class="co">## linear mixed models - reference values from older code</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>fm1 &lt;-<span class="st"> </span><span class="kw">lmer</span>(Reaction <span class="op">~</span><span class="st"> </span>Days <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Subject), sleepstudy, <span class="dt">REML =</span> <span class="ot">FALSE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="kw">summary</span>(fm1)</span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; Linear mixed model fit by maximum likelihood  [&#39;lmerMod&#39;]</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; Formula: Reaction ~ Days + (1 | Subject)</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt;    Data: sleepstudy</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; </span></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt;      AIC      BIC   logLik deviance df.resid </span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt;   1802.1   1814.9   -897.0   1794.1      176 </span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; </span></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; Scaled residuals: </span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; -3.2347 -0.5544  0.0155  0.5257  4.2648 </span></span>
-<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt; </span></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; Random effects:</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt;  Groups   Name        Variance Std.Dev.</span></span>
-<span id="cb3-19"><a href="#cb3-19"></a><span class="co">#&gt;  Subject  (Intercept) 1296.9   36.01   </span></span>
-<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt;  Residual              954.5   30.90   </span></span>
-<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt; Number of obs: 180, groups:  Subject, 18</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#&gt; </span></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt; Fixed effects:</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt;             Estimate Std. Error t value</span></span>
-<span id="cb3-25"><a href="#cb3-25"></a><span class="co">#&gt; (Intercept) 251.4051     9.5062   26.45</span></span>
-<span id="cb3-26"><a href="#cb3-26"></a><span class="co">#&gt; Days         10.4673     0.8017   13.06</span></span>
-<span id="cb3-27"><a href="#cb3-27"></a><span class="co">#&gt; </span></span>
-<span id="cb3-28"><a href="#cb3-28"></a><span class="co">#&gt; Correlation of Fixed Effects:</span></span>
-<span id="cb3-29"><a href="#cb3-29"></a><span class="co">#&gt;      (Intr)</span></span>
-<span id="cb3-30"><a href="#cb3-30"></a><span class="co">#&gt; Days -0.380</span></span></code></pre></div>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; Linear mixed model fit by maximum</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt;   likelihood [lmerMod]</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; Formula: Reaction ~ Days + (1 | Subject)</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt;    Data: sleepstudy</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; </span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt;      AIC      BIC   logLik deviance </span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt;   1802.1   1814.9   -897.0   1794.1 </span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; df.resid </span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt;      176 </span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; </span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="co">#&gt; Scaled residuals: </span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt;     Min      1Q  Median      3Q     Max </span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt; -3.2347 -0.5544  0.0155  0.5257  4.2648 </span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co">#&gt; </span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt; Random effects:</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt;  Groups   Name        Variance Std.Dev.</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="co">#&gt;  Subject  (Intercept) 1296.9   36.01   </span></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt;  Residual              954.5   30.90   </span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt; Number of obs: 180, groups:  Subject, 18</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="co">#&gt; </span></span>
+<span id="cb3-26"><a href="#cb3-26"></a><span class="co">#&gt; Fixed effects:</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a><span class="co">#&gt;             Estimate Std. Error t value</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a><span class="co">#&gt; (Intercept) 251.4051     9.5062   26.45</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a><span class="co">#&gt; Days         10.4673     0.8017   13.06</span></span>
+<span id="cb3-30"><a href="#cb3-30"></a><span class="co">#&gt; </span></span>
+<span id="cb3-31"><a href="#cb3-31"></a><span class="co">#&gt; Correlation of Fixed Effects:</span></span>
+<span id="cb3-32"><a href="#cb3-32"></a><span class="co">#&gt;      (Intr)</span></span>
+<span id="cb3-33"><a href="#cb3-33"></a><span class="co">#&gt; Days -0.380</span></span></code></pre></div>
 </div>
 <div id="fit-model-using-hmc" class="section level2">
 <h2>Fit model using <em>hmc</em></h2>
@@ -582,7 +585,7 @@ f(\boldsymbol\beta, \mathbf{u}, \sigma_\epsilon^2, \mathbf{G} | \mathbf{y}, \mat
 <span id="cb4-27"><a href="#cb4-27"></a>               <span class="dt">parallel=</span><span class="ot">FALSE</span>, <span class="dt">chains=</span><span class="dv">2</span>)</span>
 <span id="cb4-28"><a href="#cb4-28"></a>t2.hmc &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</span>
 <span id="cb4-29"><a href="#cb4-29"></a>t2.hmc <span class="op">-</span><span class="st"> </span>t1.hmc</span>
-<span id="cb4-30"><a href="#cb4-30"></a><span class="co">#&gt; Time difference of 1.008721 mins</span></span></code></pre></div>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="co">#&gt; Time difference of 1.046855 mins</span></span></code></pre></div>
 <p>The acceptance ratio for each of the HMC chains is sufficiently high for an efficient simulation.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>f_hmc<span class="op">$</span>accept<span class="op">/</span>N</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt; [1] 0.814 0.805</span></span></code></pre></div>
@@ -592,29 +595,52 @@ f(\boldsymbol\beta, \mathbf{u}, \sigma_\epsilon^2, \mathbf{G} | \mathbf{y}, \mat
 <p>The posterior quantiles are summarized after removing an initial <em>burnin</em> period. The <span class="math inline">\(\hat{R}\)</span> statistics are close to one, indicating that both HMC chains converged to the same distribution. The <span class="math inline">\(\hat{R}\)</span> statistics provide an indication of convergence. Values close to one indicate that the multiple MCMC chains converged to the same distribution, while values above 1.1 indicate possible convergence problems. All <span class="math inline">\(\hat{R}\)</span> values in our example are close to one.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">summary</span>(f_hmc, <span class="dt">burnin=</span><span class="kw">trunc</span>(N<span class="op">*</span>.<span class="dv">3</span>), <span class="dt">probs=</span><span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.5</span>, <span class="fl">0.975</span>))</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="co">#&gt; Summary of MCMC simulation</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#&gt;                   2.5%           50%       97.5%      rhat</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#&gt; beta0     230.00128348 248.352552693 266.1468368 1.0001273</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="co">#&gt; beta1       9.07725919  10.532795892  12.0676729 1.0152341</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="co">#&gt; tau_int1    0.52735664   1.167452224   1.9842790 1.0006277</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="co">#&gt; tau_int2   -2.99320429  -2.020047420  -1.2014881 1.0136249</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="co">#&gt; tau_int3   -2.51312415  -1.628754913  -0.8825962 1.0033839</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="co">#&gt; tau_int4   -0.45362162   0.195555766   0.8650832 1.0040567</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="co">#&gt; tau_int5   -0.23646113   0.357780409   1.0473653 0.9996973</span></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="co">#&gt; tau_int6   -0.31019917   0.288832127   0.9860583 1.0019383</span></span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="co">#&gt; tau_int7   -0.10531375   0.521949974   1.1716498 1.0004302</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="co">#&gt; tau_int8   -0.63986239  -0.002182091   0.5988963 0.9997383</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a><span class="co">#&gt; tau_int9   -1.91743204  -1.147736157  -0.3619272 1.0020873</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="co">#&gt; tau_int10   1.23663902   2.013683784   2.9351339 1.0036116</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a><span class="co">#&gt; tau_int11  -1.16431522  -0.503604123   0.1287776 1.0047227</span></span>
-<span id="cb7-17"><a href="#cb7-17"></a><span class="co">#&gt; tau_int12  -0.18447810   0.463964937   1.1617360 0.9996900</span></span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="co">#&gt; tau_int13  -0.79561699  -0.107625210   0.4973619 1.0025572</span></span>
-<span id="cb7-19"><a href="#cb7-19"></a><span class="co">#&gt; tau_int14   0.40947078   1.045747168   1.8118583 1.0016279</span></span>
-<span id="cb7-20"><a href="#cb7-20"></a><span class="co">#&gt; tau_int15  -0.36458092   0.263111730   0.9484060 0.9998920</span></span>
-<span id="cb7-21"><a href="#cb7-21"></a><span class="co">#&gt; tau_int16  -0.74043732  -0.079167619   0.5489269 0.9996697</span></span>
-<span id="cb7-22"><a href="#cb7-22"></a><span class="co">#&gt; tau_int17  -0.64757366  -0.008004814   0.6005836 1.0002093</span></span>
-<span id="cb7-23"><a href="#cb7-23"></a><span class="co">#&gt; tau_int18  -0.08046339   0.554203574   1.2893995 1.0051712</span></span>
-<span id="cb7-24"><a href="#cb7-24"></a><span class="co">#&gt; sigeps      3.31911275   3.420776537   3.5331037 0.9998044</span></span>
-<span id="cb7-25"><a href="#cb7-25"></a><span class="co">#&gt; xi          3.27813272   3.599906725   3.9952374 1.0162299</span></span></code></pre></div>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co">#&gt;                   2.5%           50%</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co">#&gt; beta0     230.00128348 248.352552693</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co">#&gt; beta1       9.07725919  10.532795892</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co">#&gt; tau_int1    0.52735664   1.167452224</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">#&gt; tau_int2   -2.99320429  -2.020047420</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co">#&gt; tau_int3   -2.51312415  -1.628754913</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co">#&gt; tau_int4   -0.45362162   0.195555766</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co">#&gt; tau_int5   -0.23646113   0.357780409</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co">#&gt; tau_int6   -0.31019917   0.288832127</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co">#&gt; tau_int7   -0.10531375   0.521949974</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="co">#&gt; tau_int8   -0.63986239  -0.002182091</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co">#&gt; tau_int9   -1.91743204  -1.147736157</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="co">#&gt; tau_int10   1.23663902   2.013683784</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="co">#&gt; tau_int11  -1.16431522  -0.503604123</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co">#&gt; tau_int12  -0.18447810   0.463964937</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="co">#&gt; tau_int13  -0.79561699  -0.107625210</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="co">#&gt; tau_int14   0.40947078   1.045747168</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co">#&gt; tau_int15  -0.36458092   0.263111730</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co">#&gt; tau_int16  -0.74043732  -0.079167619</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co">#&gt; tau_int17  -0.64757366  -0.008004814</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="co">#&gt; tau_int18  -0.08046339   0.554203574</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="co">#&gt; sigeps      3.31911275   3.420776537</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a><span class="co">#&gt; xi          3.27813272   3.599906725</span></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="co">#&gt;                 97.5%      rhat</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a><span class="co">#&gt; beta0     266.1468368 1.0001273</span></span>
+<span id="cb7-28"><a href="#cb7-28"></a><span class="co">#&gt; beta1      12.0676729 1.0152341</span></span>
+<span id="cb7-29"><a href="#cb7-29"></a><span class="co">#&gt; tau_int1    1.9842790 1.0006277</span></span>
+<span id="cb7-30"><a href="#cb7-30"></a><span class="co">#&gt; tau_int2   -1.2014881 1.0136249</span></span>
+<span id="cb7-31"><a href="#cb7-31"></a><span class="co">#&gt; tau_int3   -0.8825962 1.0033839</span></span>
+<span id="cb7-32"><a href="#cb7-32"></a><span class="co">#&gt; tau_int4    0.8650832 1.0040567</span></span>
+<span id="cb7-33"><a href="#cb7-33"></a><span class="co">#&gt; tau_int5    1.0473653 0.9996973</span></span>
+<span id="cb7-34"><a href="#cb7-34"></a><span class="co">#&gt; tau_int6    0.9860583 1.0019383</span></span>
+<span id="cb7-35"><a href="#cb7-35"></a><span class="co">#&gt; tau_int7    1.1716498 1.0004302</span></span>
+<span id="cb7-36"><a href="#cb7-36"></a><span class="co">#&gt; tau_int8    0.5988963 0.9997383</span></span>
+<span id="cb7-37"><a href="#cb7-37"></a><span class="co">#&gt; tau_int9   -0.3619272 1.0020873</span></span>
+<span id="cb7-38"><a href="#cb7-38"></a><span class="co">#&gt; tau_int10   2.9351339 1.0036116</span></span>
+<span id="cb7-39"><a href="#cb7-39"></a><span class="co">#&gt; tau_int11   0.1287776 1.0047227</span></span>
+<span id="cb7-40"><a href="#cb7-40"></a><span class="co">#&gt; tau_int12   1.1617360 0.9996900</span></span>
+<span id="cb7-41"><a href="#cb7-41"></a><span class="co">#&gt; tau_int13   0.4973619 1.0025572</span></span>
+<span id="cb7-42"><a href="#cb7-42"></a><span class="co">#&gt; tau_int14   1.8118583 1.0016279</span></span>
+<span id="cb7-43"><a href="#cb7-43"></a><span class="co">#&gt; tau_int15   0.9484060 0.9998920</span></span>
+<span id="cb7-44"><a href="#cb7-44"></a><span class="co">#&gt; tau_int16   0.5489269 0.9996697</span></span>
+<span id="cb7-45"><a href="#cb7-45"></a><span class="co">#&gt; tau_int17   0.6005836 1.0002093</span></span>
+<span id="cb7-46"><a href="#cb7-46"></a><span class="co">#&gt; tau_int18   1.2893995 1.0051712</span></span>
+<span id="cb7-47"><a href="#cb7-47"></a><span class="co">#&gt; sigeps      3.5331037 0.9998044</span></span>
+<span id="cb7-48"><a href="#cb7-48"></a><span class="co">#&gt; xi          3.9952374 1.0162299</span></span></code></pre></div>
 <p>Histograms of the posterior distribution show that Bayesian parameter estimates align with frequentist estimates. The <em>cols</em> parameter specifies the parameters to be displayed in <em>diagplots</em>, based on the order provided to the <em>hmc</em> function.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>beta.freq &lt;-<span class="st"> </span><span class="kw">fixef</span>(fm1)</span>
 <span id="cb8-2"><a href="#cb8-2"></a>xi.freq &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span><span class="kw">log</span>(<span class="kw">VarCorr</span>(fm1)<span class="op">$</span>Subject[<span class="dv">1</span>])</span>
@@ -660,6 +686,7 @@ f(\boldsymbol\beta, \mathbf{u}, \sigma_\epsilon^2, \mathbf{G} | \mathbf{y}, \mat
 <p>Gelman, Andrew. (2006) “Prior distributions for variance parameters in hierarchical models (comment on article by Browne and Draper).” <em>Bayesian analysis</em> 1.3: 515-534.</p>
 <p>Chan, J. C. C., &amp; Jeliazkov, I. (2009). MCMC estimation of restricted covariance matrices. <em>Journal of Computational and Graphical Statistics</em>, 18(2), 457-480.</p>
 <p>Agresti, A. (2015). <em>Foundations of linear and generalized linear models</em>. John Wiley &amp; Sons. ISBN: 978-1-118-73003-4</p>
+<p>Thomas, Samuel, and Wanzhu Tu. “Learning Hamiltonian Monte Carlo in R.” arXiv preprint arXiv:2006.16194 (2020).</p>
 </div>
 
 
