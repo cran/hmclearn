@@ -12,7 +12,7 @@
 
 <meta name="author" content="Samuel Thomas" />
 
-<meta name="date" content="2020-07-22" />
+<meta name="date" content="2020-10-04" />
 
 <title>hmclearn: Logistic Mixed Effects Regression Example</title>
 
@@ -303,7 +303,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">hmclearn: Logistic Mixed Effects Regression Example</h1>
 <h4 class="author">Samuel Thomas</h4>
-<h4 class="date">2020-07-22</h4>
+<h4 class="date">2020-10-04</h4>
 
 
 
@@ -532,7 +532,7 @@ f(\mathbf{y}|\mathbf{X}, \mathbf{Z}, \boldsymbol\beta, \mathbf{u}) &amp;= \prod_
 <span id="cb4-24"><a href="#cb4-24"></a></span>
 <span id="cb4-25"><a href="#cb4-25"></a>t2.hmc &lt;-<span class="st"> </span><span class="kw">Sys.time</span>()</span>
 <span id="cb4-26"><a href="#cb4-26"></a>t2.hmc <span class="op">-</span><span class="st"> </span>t1.hmc</span>
-<span id="cb4-27"><a href="#cb4-27"></a><span class="co">#&gt; Time difference of 16.14619 mins</span></span></code></pre></div>
+<span id="cb4-27"><a href="#cb4-27"></a><span class="co">#&gt; Time difference of 13.35735 mins</span></span></code></pre></div>
 <p>The acceptance ratio for each of the HMC chains is sufficiently high for an efficient simulation.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>f_hmc<span class="op">$</span>accept<span class="op">/</span>N</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="co">#&gt; [1] 0.670 0.672</span></span></code></pre></div>
